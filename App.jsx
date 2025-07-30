@@ -1,12 +1,20 @@
 import { View, Text, StatusBar } from 'react-native';
 import React from 'react';
 import './global.css';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './src/screens/home/Home';
+import Gaan from './src/screens/gaan/Gaan';
+import Gozol from './src/screens/gozol/Gozol';
+import Kobita from './src/screens/kobita/Kobita';
+import Shayre from './src/screens/shayre/Shayre';
 
 const App = ({
   backgroundColor = '#6200ee',
   barStyle = 'light-content', // 'dark-content' or 'light-content'
   translucent = true,
 }) => {
+  const Stack = createNativeStackNavigator();
   return (
     <>
       <View
@@ -24,17 +32,19 @@ const App = ({
           translucent={translucent}
         />
       </View>
-      <View>
-        <Text className="text-xl text-red-500">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-          veritatis, blanditiis dolor vitae eius, deleniti corporis voluptate
-          officiis pariatur illo ullam maxime. Maiores quibusdam quod
-          necessitatibus voluptatibus accusamus molestias commodi debitis, unde
-          velit dolores perspiciatis nemo suscipit deleniti veniam, pariatur
-          nisi neque aspernatur ipsum officiis obcaecati. Tempora hic inventore
-          sapiente?
-        </Text>
-      </View>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="Home"
+            component={Home}
+          />
+          <Stack.Screen name="Gaan" component={Gaan} />
+          <Stack.Screen name="Gozol" component={Gozol} />
+          <Stack.Screen name="Kobita" component={Kobita} />
+          <Stack.Screen name="Shayre" component={Shayre} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
   );
 };
