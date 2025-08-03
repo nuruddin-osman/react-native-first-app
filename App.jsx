@@ -39,7 +39,11 @@ const App = ({
             name="Home"
             component={Home}
           />
-          <Stack.Screen name="Gaan" component={Gaan} />
+          <Stack.Screen
+            name="Gaan"
+            component={Gaan}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen name="Gozol" component={Gozol} />
           <Stack.Screen name="Kobita" component={Kobita} />
           <Stack.Screen name="Shayre" component={Shayre} />

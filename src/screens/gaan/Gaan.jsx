@@ -10,17 +10,18 @@ import {
 import React, { useState } from 'react';
 import Clipboard from '@react-native-clipboard/clipboard';
 import { bani } from '../../components/DummyArr';
+import CustomHeader from '../../components/CustomHeader';
 
 const Gaan = () => {
-  const copyToClipboard = text => {
-    Clipboard.setString(text);
+  const copyToClipboard = content => {
+    Clipboard.setString(content);
     Alert.alert('অনুলিপি সফল', 'উক্তিটি কপি করা হয়েছে ✅');
   };
 
-  const shareQuote = async text => {
+  const shareQuote = async content => {
     try {
       const result = await Share.share({
-        message: text,
+        message: content,
       });
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
@@ -37,7 +38,8 @@ const Gaan = () => {
   };
 
   return (
-    <View>
+    <View className="px-3">
+      <CustomHeader title="Gaan" />
       <FlatList
         data={bani}
         renderItem={({ item }) => (
@@ -45,18 +47,18 @@ const Gaan = () => {
             <View className="mb-10">
               <View className="bg-gray-950 w-full h-[30vh] p-5 rounded-s-xl">
                 <Text className="text-white text-xl text-center">
-                  {item.text}
+                  {item.content}
                 </Text>
               </View>
               <View className="flex flex-row justify-between items-center bg-blue-400 p-5 rounded-e-xl">
                 <TouchableOpacity
-                  onPress={() => copyToClipboard(item.text)}
+                  onPress={() => copyToClipboard(item.content)}
                   className="bg-red-600 px-4 py-2 rounded-lg"
                 >
                   <Text className="text-white font-bold">কপি করুন</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  onPress={() => shareQuote(item.text)}
+                  onPress={() => shareQuote(item.content)}
                   className="bg-green-600 px-4 py-2 rounded-lg"
                 >
                   <Text className="text-white font-bold">শেয়ার করুন</Text>
