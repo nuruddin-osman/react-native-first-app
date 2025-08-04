@@ -6,12 +6,13 @@ import { ChevronLeft } from 'lucide-react-native';
 const CustomHeader = ({ title }) => {
   const navigation = useNavigation();
   return (
-    <View className="flex-row items-center justify-between px-4 py-3 bg-white shadow-md">
+    <View className="flex-row items-center px-4 py-3 bg-white gap-8">
       <TouchableOpacity onPress={() => navigation.goBack()}>
-        <ChevronLeft color="red" size={48} />
+        <ChevronLeft color="#2d2d2d" size={30} />
       </TouchableOpacity>
-      <Text className="text-lg font-semibold text-gray-800">{title}</Text>
-      <View className="w-6" /> {/* ব্যালেন্স করার জন্য খালি স্পেস */}
+      <View>
+        <Text className="text-3xl font-semibold text-gray-800">{title}</Text>
+      </View>
     </View>
   );
 };

@@ -7,7 +7,7 @@ const Home = () => {
   const navigation = useNavigation();
   return (
     <ImageBackground source={HomeBg} resizeMode="cover">
-      <View className="w-full h-screen px-4">
+      <View className="w-full h-screen px-4 pt-3">
         <View className="flex flex-row flex-wrap gap-5 w-full ">
           <View className="w-[47%] bg-orange-400 rounded-lg p-3 h-48 flex items-center justify-center">
             <TouchableOpacity onPress={() => navigation.navigate('Gaan')}>

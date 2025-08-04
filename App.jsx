@@ -35,18 +35,43 @@ const App = ({
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            options={{ headerShown: false }}
             name="Home"
             component={Home}
+            options={{
+              title: 'মোটিভেশনাল উক্তি ২০২৫',
+              headerStyle: {
+                backgroundColor: '#ffffff',
+                elevation: 4, // Android shadow
+                shadowOpacity: 0.25, // iOS shadow
+              },
+              headerTitleStyle: {
+                fontSize: 30,
+                fontWeight: 'bold',
+                color: '#333333',
+              },
+              headerTitleAlign: 'center',
+            }}
           />
           <Stack.Screen
             name="Gaan"
             component={Gaan}
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="Gozol" component={Gozol} />
-          <Stack.Screen name="Kobita" component={Kobita} />
-          <Stack.Screen name="Shayre" component={Shayre} />
+          <Stack.Screen
+            name="Gozol"
+            component={Gozol}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Kobita"
+            component={Kobita}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Shayre"
+            component={Shayre}
+            options={{ headerShown: false }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>

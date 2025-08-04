@@ -38,7 +38,7 @@ const Gaan = () => {
   };
 
   return (
-    <View className="px-3">
+    <View className="px-3 bg-white">
       <CustomHeader title="Gaan" />
       <FlatList
         data={bani}
