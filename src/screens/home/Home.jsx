@@ -9,24 +9,24 @@ const Home = () => {
     <ImageBackground source={HomeBg} resizeMode="cover">
       <View className="w-full h-screen px-4 pt-3">
         <View className="flex flex-row flex-wrap gap-5 w-full ">
-          <View className="w-[47%] bg-orange-400 rounded-lg p-3 h-48 flex items-center justify-center">
-            <TouchableOpacity onPress={() => navigation.navigate('Gaan')}>
-              <Text className="text-3xl font-bold text-[#2d2d2d]">Gaan</Text>
-            </TouchableOpacity>
-          </View>
           <View className="w-[47%] bg-[#4d0066] rounded-lg p-3 h-48 flex items-center justify-center">
             <TouchableOpacity onPress={() => navigation.navigate('Gozol')}>
               <Text className="text-3xl font-bold text-[#FFF]">Gozol</Text>
             </TouchableOpacity>
           </View>
-          <View className="w-[47%] bg-[#a1a475] rounded-lg p-3 h-48 flex items-center justify-center">
+          <View className="w-[47%] bg-lime-100 rounded-lg p-3 h-48 flex items-center justify-center">
             <TouchableOpacity onPress={() => navigation.navigate('Kobita')}>
               <Text className="text-3xl font-bold text-[#2d2d2d]">Kobita</Text>
             </TouchableOpacity>
           </View>
-          <View className="w-[47%] bg-[#de27d7] rounded-lg p-3 h-48 flex items-center justify-center">
+          <View className="w-[47%] bg-sky-950 rounded-lg p-3 h-48 flex items-center justify-center">
             <TouchableOpacity onPress={() => navigation.navigate('Shayre')}>
-              <Text className="text-3xl font-bold text-[#2d2d2d]">Shayre</Text>
+              <Text className="text-3xl font-bold text-amber-500">Shayre</Text>
+            </TouchableOpacity>
+          </View>
+          <View className="w-[47%] bg-orange-400 rounded-lg p-3 h-48 flex items-center justify-center">
+            <TouchableOpacity onPress={() => navigation.navigate('Gaan')}>
+              <Text className="text-3xl font-bold text-[#2d2d2d]">Gaan</Text>
             </TouchableOpacity>
           </View>
         </View>
